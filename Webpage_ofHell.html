@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>the most amazing page</title>
+    <script src="animator.js"></script>
+    <meta name="description" content="Watch the Pug be in the Rug. Level up and maximize!" />
 </head>
-<body>
 
+ <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+
+    .timer {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: monospace;
+      width: 250px;
+      text-align: center;
+    }
+
+    .inner {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+    }
+
+    .frame {
+      border-image: url("capyybara.png") 28 / 28px / 0 round;
+      border-width: 28px;
+      border-style: solid;
+    }
+
+    .timer span {
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 600px) {
+      .timer {
+        width: 500px;
+      }
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+
+<body>
+<canvas></canvas>
+  <div class="timer frame">
+    <div class="inner">
+      You have been honouring the capibara <span class="seconds">0</span> seconds<br />
+      You are a <span class="grade">Assistant</span> of pug
+    </div>
+  </div>
+  <script src="animator.js"></script>
 </body>
 </html>
