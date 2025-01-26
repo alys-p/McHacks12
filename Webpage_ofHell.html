@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>what everyone needs in their life</title>
+    <link rel="icon" type="image/png" href="capybara.png">
 </head>
 
  <style>
@@ -16,17 +17,22 @@
 
     .timer {
       position: fixed;
-      bottom: 15px;
+      bottom: 180px;
       left: 50%;
       transform: translateX(-50%);
       font-family: monospace;
-      width: 250px;
+      width: 400px;
+      height: 10px;
       text-align: center;
+      font-size: 1.2em;
+      opacity: 0;
+      transition: opacity 4s ease-in-out
     }
 
     .inner {
       background: rgba(255, 255, 255, 0.7);
       padding: 20px;
+      border-radius: 40px;
     }
 
     .frame {
@@ -38,30 +44,55 @@
     .timer span {
       font-weight: bold;
     }
-
-    @media screen and (min-width: 600px) {
-      .timer {
-        width: 500px;
-      }
+        .chicken-soup {
+      position: fixed;
+      bottom: 10px; /* Adjust position above the timer */
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: monospace;
+      width: 500px;
+      height: 100px;
+      text-align: center;
+      font-size: 1.2em;
+      opacity: 0;
+      transition: opacity 5s ease-in-out;
+      border-radius: 40px; /* Rounded edges */
+    }
+        .chicken-soup-img {
+      display: inline-block; /* Aligns with the text */
+      width: 60px; /* Adjust the size of the image */
+      height: auto; /* Maintain aspect ratio */
+      margin-left: 5px; /* Add some spacing between text and the image */
+      vertical-align: middle; /* Aligns the image with the text vertically */
     }
 
     canvas {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
     }
+    #chickenSoupCanvas {
+        background: #f9c74f; /* Add a different background color for the new canvas */
+}
   </style>
 
 <body>
-<canvas></canvas>
+<canvas id="mainCanvas" ></canvas>
+<canvas id="chickenSoupCanvas" style="display: none;"></canvas>
   <div class="timer frame">
     <div class="inner">
       You have been blessed by the capybara <span class="seconds">0</span> seconds<br />
       You are a <span class="grade">Assistant</span> of capybara
     </div>
   </div>
+    <div class="chicken-soup">
+        <div class="inner" id="chickenSoupBox">
+        Give capybara some chicken soup?
+            <img src="chicksoup.png" alt="Chicken Soup" class="chicken-soup-img">
+        </div>
+    </div>
   <script src="./animator.js"></script>
 </body>
 </html>
